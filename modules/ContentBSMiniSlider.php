@@ -47,20 +47,22 @@ class ContentBSMiniSlider extends ContentElement
 		
 		if (TL_MODE == 'BE')
 		{
-			$objTemplate = new \BackendTemplate('be_wildcard');
+			$GLOBALS['TL_JAVASCRIPT'][] ='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
 
-			$objSlider = $this->Database->prepare('SELECT * FROM tl_bsminislider WHERE id = ?')->execute($this->zbs_jqminislider);
-	    
-			if($objSlider->numRows == 0)
-			{
-			    return "";
-			}
-			$objSlider->next();
-			
-			$objTemplate->wildcard = '### ' . utf8_strtoupper($objSlider->title) . ' ###';
-			$objTemplate->title = 'MiniSlider: ' . $objSlider->title;
-
-			return $objTemplate->parse();
+//			$objTemplate = new \BackendTemplate('be_wildcard');
+//
+//			$objSlider = $this->Database->prepare('SELECT * FROM tl_bsminislider WHERE id = ?')->execute($this->zbs_jqminislider);
+//	    
+//			if($objSlider->numRows == 0)
+//			{
+//			    return "";
+//			}
+//			$objSlider->next();
+//			
+//			$objTemplate->wildcard = '### ' . utf8_strtoupper($objSlider->title) . ' ###';
+//			$objTemplate->title = 'MiniSlider: ' . $objSlider->title;
+//
+//			return $objTemplate->parse();
 		}
 		
 		return parent::generate();
