@@ -105,13 +105,11 @@ class ContentBSMiniSlider extends ContentElement
 		$arrImage['renderedImage'] = $this->generateImage($arrImage['resizedImage'], $arrImage['alttext']);		
 		$arrImages[] = $arrImage;
 	    }
-//	    var_dump($arrImages);
 	    $this->Template->images = $arrImages;
 	    $this->Template->sliderId = $strSliderId;
 	    
 	    $GLOBALS['TL_CSS'][] = 'system/modules/zbs_jqminislider3/assets/minislider.css';
 	    
-//	    $GLOBALS['TL_JAVASCRIPT'][] ='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
 	    $GLOBALS['TL_JAVASCRIPT'][] ='system/modules/zbs_jqminislider3/assets/logoSlider.js';
 	    
 	    
