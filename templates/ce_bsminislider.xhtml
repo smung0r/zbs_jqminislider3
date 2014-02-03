@@ -1,0 +1,24 @@
+
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<div id="<?php echo $this->sliderId ?>" class="logoSlider" style="position: relative; height: <?php echo $this->containerHeight ?>px; width <?php echo $this->containerWidth ?>px;">
+    <?php foreach ($this->images as $image): ?>
+        <div class="" style="display:none;">
+            <?php if ($image['link']): ?>
+            <a href="<?php echo $image['link'] ?>">
+            <?php endif; ?>
+            <?php echo $image['renderedImage'] ?>
+            <?php if ($image['link']): ?>
+            </a>
+            <?php endif; ?>
+            <span class="invisible displaytime"><?php echo $image['duration'] ?></span>
+        </div>
+    <?php endforeach; ?>
+    <?php echo $this->jsCode ?>
+</div>
+
+</div>
